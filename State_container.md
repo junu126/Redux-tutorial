@@ -9,3 +9,5 @@
 ![CONTAINER](./image/container.PNG)
 
 한마디로 복잡한 과정을 한번에 수행 할 수 있도록 도와주는 형식 입니다. ~~핵사기인듯..~~ 
+
+[Redux설명으로 돌아가기](https://github.com/junu126/Redux-tutorial)
