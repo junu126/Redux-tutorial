@@ -66,6 +66,63 @@ redux모듈내에 있는 createStore를 가져오기 위함 입니다. */
 
 /**
     * 이것이 (state, action) => state 형태의 순수 함수인 reducer 입니다.
+    * 리듀서는 action이 어떻게 state를 다음 state로 변경하는지 서술합니다.
+    * 
+    * state의 모양은 저희가 정합니다. 배열 일수도 있고, 객체일 수도 있고, 기본형일 수도 있습니다.
+    * 심지어 Immutable.js 자료구조 일 수도 있습니다. 중요한 점은 state를 직접 건들이면 안되며 
+    * state가 변경되면 객체를 새로 반환해야 합니다.
+    * 이 예시에서는 switch문을 사용했지만
+    * 기호에 따라서 map()함수와 같은 다른 컨벤션을 사용하셔도 좋습니다.
 */
+function counter(state = 0, action) {
+    switch(action.type) {
+        case 'INCREMENT' :
+            return state + 1
+        case 'DECREMENT' :
+            return state - 1
+        default : 
+            return state
+    }
+}
 
+// 앱의 상태를 보관하는 Redux 스토어를 생성합니다.
+//  API의 종류로는 { getstate, dispatch, subscribe, replaceReducer }가 있습니다.
+
+let store = createStore(counter)
+
+// 여러분은 subscribe()를 통해서 state를 변경해서 UI를 업데이트 해 달라고 요청을 보낼 수 있습니다.
+// 보통은 subscribe()를 직접 사용하기 보단 뷰 바인딩 라이브러리(React, Redux)를 사용합니다.
+// 하지만 현재 상태를 localStorage에 지속적으로 편리하게 넣기 위해서는 subscribe을 사용하는 것이 좋습니다.
+
+store.subscribe(() => 
+    console.log(store.getstate())
+)
+
+// 내부의 state 값을 변경하는 방법은 action뿐 입니다.
+// action은 연속해서 나열 할 수도 있고, 기록할 수도잇고 또는 저장하거나 재사용 할 수도 있습니다.
+
+store.dispatch({ type : 'INCREMENT' })
+// 1
+store.dispatch({ type : 'INCREMENT' })
+// 2
+store.dispatch({ type : 'DRCREMENT' })
+// 1
 ```
+
+State를 직접적으로 바로 변경하는 대신, Action이라고 불리는 평범한 객체를 통해 일어날 일을 명시 합니다. 그리고 각각의 action이 전체 APP의 State를 어떻게 변경할지 결정하는 특별한 함수인 Reducer를 작성합니다.
+
+그리고 Redux를 사용하기 전에 Flux를 사용하던 분들은 알아둬야 할 것이 있습니다.
+Redux에선 Dispatcher가 없습니다. 또한 store를 여러게 지원하지 않고 단 하나만 지원합니다. 그래서 처음 공부할 때 조오금 했갈리는 부분이 있을 수 있습니다. 나중에 여러분의 APP이 커졌을 때, store를 추가하는 대신 root reducer를 쪼개서 state tree에 각기 다른 부분을 독립적으로 다루는 reducer를 만들면 됩니다. 마치 React에서 하나의 root component가 있고, 이것을 여러개의 작은 component로 나누는 것 처럼 말이죠.
+
+이러한 기능이 숫자 세는 앱과 같은 작은 앱에는 과도해 보일 수 있지만, 이 패턴의 어썸한면이 크고 복잡한 앱으로 확장하기 좋다는 점이 있습니다. 또한 이것은 action이 일으키는 모든 변경을 추적함으로 써, 강력한 개발자 도구를 가능하게 합니다. 마지막으로 여러분은 action을 재생하는 것 만으로 사용자의 세션을 기록하고, 재생할 수 있습니다.
+
+# Documentation
+
+* [소개](내 깃헙 업로드 할 주소.))
+* [기초](내 깃헙 업로드 할 주소.)
+* [심화](내 깃헙 업로드 할 주소.)
+* [레시피](내 깃헙 업로드 할 주소.)
+* [문제해결](내 깃헙 업로드 할 주소.)
+* [용어사전](내 깃헙 업로드 할 주소.)
+* [API 레퍼런스](내 깃헙 업로드 할 주소.)
+
