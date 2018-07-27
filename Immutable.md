@@ -210,4 +210,4 @@ render(<App />, document.getElementById('root'));
 저는 Recode가 정말 훌륭한 메소드라고 생각합니다.  
 
 
-[Redux설명으로 돌아가기](https://github.com/junu126/Redux-tutorial)
+[Redux설명으로 돌아가기](https://github.com/junu126/Redux-tutorial#%EC%98%88%EC%A0%9C)
