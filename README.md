@@ -117,7 +117,7 @@ Redux에선 Dispatcher가 없습니다. 또한 store를 여러게 지원하지 �
 
 # Documentation
 
-* [소개](내 깃헙 업로드 할 주소.)
+* [소개](https://github.com/junu126/Redux-tutorial/blob/master/Introduction)
 * [기초](내 깃헙 업로드 할 주소.)
 * [심화](내 깃헙 업로드 할 주소.)
 * [레시피](내 깃헙 업로드 할 주소.)
