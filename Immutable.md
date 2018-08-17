@@ -2,7 +2,7 @@
 
 React에서 State를 직접적으로 변경 불가능 하다는 사실은 여러분 모두 아실겁니다. `Setstate()`를 통해서 우리는 State를 변경 할 수 있죠. 저희가 직접 state를 변경 할 수 없다는 점은 정말 불편합니다. 다음 예제를 봐주세요.
 
-```js
+```javascript
 state = {
   where: {
     are: {
@@ -44,7 +44,7 @@ Immutable.js를 사용하는데에는 정말 어려움이 없습니다. 단지 �
 > 9. 특정 key 를 지울때 (혹은 List 에서 원소를 지울 때) delete 사용
 
 간단한 사용 예시를 들어보겠습니다.  
-```js
+```javascript
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
@@ -144,7 +144,7 @@ Recode라고 하는 Immutable.js의 **엄청난** 메소드가 있습니다. Rec
 Record 는, Typescript 혹은 Flow 같은 타입시스템을 도입 할 때 굉장히 유용합니다.  
 
 다음은 Recode의 예제파일 입니다.
-```js
+```javascript
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
