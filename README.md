@@ -58,7 +58,7 @@ Redux의 간단한 구조를 설명드리면 여러분이 만드실 앱의 state
 
 * [Immutable.js](https://github.com/junu126/Redux-tutorial/blob/master/Immutable.md)문법은 이 링크에서 확인하실 수 있습니다.
 
-```js
+```javascript
 import { createStore } from 'redux'
 /* createStore에 괄호를 씌운 이유는 
 redux모듈내에 있는 createStore를 가져오기 위함 입니다. */
